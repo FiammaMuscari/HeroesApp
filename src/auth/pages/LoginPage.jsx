@@ -18,8 +18,8 @@ export const LoginPage = () => {
 
   return (
     <div className="container mt-5">
-      <h1>LoginPage</h1>
-      <hr />
+      <h1 className=" mb-3">LoginPage</h1>
+      <hr className=" mb-3"/>
 
       <button className="btn btn-primary" onClick={onLogin}>
         Login

@@ -1,9 +1,11 @@
+import { Box, Button, useColorMode } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../auth/context/AuthContext';
+import {ColorMode} from '../../heroes/components/ColorMode';
 
 export const Navbar = () => {
-
+    const { colorMode } = useColorMode();
     const navigate = useNavigate();
 
     const { user, logout } = useContext(AuthContext )
@@ -60,12 +62,15 @@ export const Navbar = () => {
                    <span className="nav-item nav-link text-primary">
                         { user?.username }
                    </span>
-                   <button 
-                        className='btn nav-item nav-link'
+                   <Box pt="0" pl="1" px='1'>
+              <ColorMode />
+            </Box>
+                   <Button className='text-secondary btn nav-item nav-link'
+
                         onClick={onLogout}
                    > 
                         Logout
-                   </button>
+                   </Button>
                 </ul>
             </div>
         </nav>

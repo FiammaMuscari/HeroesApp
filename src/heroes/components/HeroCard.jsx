@@ -1,44 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-export const HeroCard = ({
-    id,
-    superhero,
-    publisher,
-    alter_ego,
-    first_appearance,
-    characters,
-}) => {
-
-const heroImageUrl = `/assets/heroes/${ id }.jpg`;
-
+export const HeroCard = ({ id, name, biography, images }) => {
   return (
-    <div className='col animate__animated animate__fadeIn'>
-        <div className="card">
-            <div className="row no-glutters">
-                <div className="col-4">
-                    <img src={heroImageUrl} alt={superhero} className='card-img' />
-                </div>
-                <div className="col-8">
-                    <div className="card-body">
-                        <h5 className="card-title">{ superhero }</h5>
-                        <p className="card-text">{ alter_ego }</p>
-                        {
-                            (alter_ego !== characters) && (<p>{characters}</p>)   
-                        }
-                        <p className="card-text">
-                            <small className='text-muted'>
-                                {first_appearance}
-                            </small>
-                        </p>
+    <div className="col animate__animated animate__fadeIn">
+      <div className="card mt-2">
+        <div className="d-flex">
+          <div className="col-6">
+            <img src={images.sm} alt={name} />
+          </div>
+          <div className="col-6">
+            <div className="card-body">
+              <p className="card-title text-secondary">{name}</p>
+              <p className="card-text text-secondary">{biography.fullName}</p>
+              <p className="card-text">
+                <small className="text-muted">
+                  {biography.firstAppearance}
+                </small>
+              </p>
 
-                        <Link to={`/hero/${id}`}>
-                            More info...
-                        </Link>
-                    </div>
-                </div>
+              <Link to={`/hero/${id}`} className="btn btn-outline-primary m-2">
+                More Info
+              </Link>
             </div>
-        </div> 
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
