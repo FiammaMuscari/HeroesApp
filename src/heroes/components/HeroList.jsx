@@ -1,6 +1,7 @@
 import React from "react";
 import { useCounter } from "../../hooks/useCounter";
 import { useHeroes } from "../../hooks/useHeroes";
+import { SearchByPublisher } from "./SearchByPublisher";
 import { Pagination } from "../../ui/components/Pagination";
 import { HeroCard } from "./HeroCard";
 import '../../../src/styles.css'
@@ -14,6 +15,7 @@ export const HeroList = ({ publisher }) => {
 
   return (
     <>
+    <SearchByPublisher/>
       <div className="products_menu paginationresp">
         <span>
           <Pagination

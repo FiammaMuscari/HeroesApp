@@ -28,6 +28,13 @@ const getHeroesByPublishers = (publisher) => {
   )
 }
 
+const getPublishers = () => {
+  const publishers = data?.map(hero => hero.biography.publisher)
+      .filter((value, index, self) => self.indexOf(value) === index && value != null)
+  return publishers
+}
+
+
 
 
 
@@ -41,6 +48,7 @@ const actions = {
   getHeroById,
   getHeroByName,
   getHeroesByPublishers,
+  getPublishers,
 }
 
   return (//provee a todos los componentes de este contexto de toda la informacion que pasamos por aca
