@@ -7,6 +7,7 @@ import queryString from 'query-string';
 import { HeroCard } from "../components/HeroCard";
 
 import {useHeroes} from '../../hooks/useHeroes'
+import "../../../src/styles.css"
 
 export const SearchPage = () => {
 
@@ -34,8 +35,8 @@ export const SearchPage = () => {
     <div className="d-grid gap-3">
       <h1 className=" mt-4">Search</h1>
       <hr />
-      <div className="row">
-        <div className="col-5">
+      <div className="row alignsearching">
+        <div className="col-5 search">
           <h4 className=" mb-2">Searching</h4>
           <hr />
           <form className="mt-2"
@@ -54,7 +55,7 @@ export const SearchPage = () => {
           </form>          
         </div>
 
-        <div className="col-7 gap-1">
+        <div className="col-7 gap-1 results">
           <h4  className=" mb-2 ">Results</h4>
           <hr/>
 

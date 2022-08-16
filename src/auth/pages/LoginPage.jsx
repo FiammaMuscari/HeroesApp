@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useForm } from "../../hooks/useForm";
 import Typed from "react-typed";
-
+import "../../../src/styles.css"
 
 export const LoginPage = () => {
   const { login } = useContext(AuthContext);
@@ -15,19 +15,13 @@ export const LoginPage = () => {
   });
   const { username } = formState;
 
-
   const onLogin = () => {
     if (username.trim().length <= 1) return;
     login(username);
     navigate("/", {
       replace: true,
     });
-    if (username.length=0) return
-    navigate('/login',{
-      replace: true,
-    });
   };
-
 
 
   return (
@@ -40,7 +34,7 @@ export const LoginPage = () => {
         />
         <form onSubmit={() => onLogin()}>
           <Typed
-          className="d-flex justify-content-center text-white"
+          className="d-flex justify-content-center text-white logintyping"
             strings={[
               '"Bad Deadpool... Good Deadpool!"',
               '"Say the magic words, Fat Gandalf."',
@@ -53,14 +47,15 @@ export const LoginPage = () => {
           />
           <div className="d-grid gap-2 mt-3">
             <input
-              style={{width:"40vw", borderRadius:"0.2em"}}
+              className="inputlogin"
+              style={{width:"40vw", borderRadius:"0.2em", padding:"0.5em"}}
               type="text"
               placeholder="Username"
               name="username"
               value={username}
               onChange={onInputChange}
             ></input>
-            <button disabled={!username}className="btn btn-outline-primary mt-3" type="submit">
+            <button disabled={!username} className="btn btn-outline-primary mt-3" type="submit">
               Login
             </button>
           </div>

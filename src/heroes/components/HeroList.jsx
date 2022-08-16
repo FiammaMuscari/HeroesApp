@@ -3,7 +3,7 @@ import { useCounter } from "../../hooks/useCounter";
 import { useHeroes } from "../../hooks/useHeroes";
 import { Pagination } from "../../ui/components/Pagination";
 import { HeroCard } from "./HeroCard";
-
+import '../../../src/styles.css'
 export const HeroList = ({ publisher }) => {
   const { getHeroesByPublishers } = useHeroes();
   const heroes = getHeroesByPublishers(publisher);
@@ -14,7 +14,7 @@ export const HeroList = ({ publisher }) => {
 
   return (
     <>
-      <div className="products_menu">
+      <div className="products_menu paginationresp">
         <span>
           <Pagination
             page={counter}

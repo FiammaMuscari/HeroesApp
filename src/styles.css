@@ -1,0 +1,85 @@
+/*Responsive CSS*/
+/*loginpage*/
+@media only screen and (max-width: 600px){
+    .logintyping{
+        max-width: 9em;
+        height: 3em;
+    }
+
+    .inputlogin{
+        width: 70vw;
+        border-radius: 0.2em;
+        height: 2.5em;
+        padding: 1em;
+    }
+
+
+
+/*navbar*/
+
+.navbar{
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    height: 6em;
+    display: flex;
+}
+
+.noshow{
+    display: none;
+}
+
+.navbarnav{
+    display: flex;
+
+flex-direction: row-reverse;
+gap: 1em;
+justify-content: space-around;
+}
+
+.ulnav{
+    display: flex;
+    flex-direction: inherit;
+}
+
+
+/*searching page*/
+
+.alignsearching{
+    display: flex;
+    flex-direction: column;
+}
+
+.search{
+    margin: auto;
+}
+
+.results{
+    margin: auto;
+    margin-top: 2em;
+}
+
+
+/*card image*/
+
+.imgrespsection{
+    flex-direction: column;
+}
+.imgrespcontainer{
+    width: auto;
+}
+.imgresp{
+    width: 100vw;
+    height: 100vw;
+    max-width: 100%;
+}
+
+
+/*pagination*/
+
+
+.paginationresp{
+    justify-content: initial;
+display: flex;
+}
+}
