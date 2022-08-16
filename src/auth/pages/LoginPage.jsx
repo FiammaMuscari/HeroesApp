@@ -15,10 +15,15 @@ export const LoginPage = () => {
   });
   const { username } = formState;
 
+
   const onLogin = () => {
     if (username.trim().length <= 1) return;
     login(username);
     navigate("/", {
+      replace: true,
+    });
+    if (username.length=0) return
+    navigate('/login',{
       replace: true,
     });
   };
@@ -55,7 +60,7 @@ export const LoginPage = () => {
               value={username}
               onChange={onInputChange}
             ></input>
-            <button className="btn btn-outline-primary mt-3" type="submit">
+            <button disabled={!username}className="btn btn-outline-primary mt-3" type="submit">
               Login
             </button>
           </div>
