@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCounter } from "../../hooks/useCounter";
 import { useHeroes } from "../../hooks/useHeroes";
 import { SearchByPublisher } from "./SearchByPublisher";
@@ -9,13 +9,13 @@ export const HeroList = ({ publisher }) => {
   const { getHeroesByPublishers } = useHeroes();
   const heroes = getHeroesByPublishers(publisher);
 
-  const { counter, decrement, increment } = useCounter(1);
+  const { counter, decrement, increment, reset } = useCounter(1);
   const maxHeroes = 20;
   const lastPage = Math.ceil(heroes?.length / maxHeroes);
-
+  const setReset =() => reset(1)
   return (
     <>
-    <SearchByPublisher/>
+    <SearchByPublisher setReset={setReset}/>
       <div className="products_menu paginationresp">
         <span>
           <Pagination
@@ -36,7 +36,7 @@ export const HeroList = ({ publisher }) => {
             <HeroCard key={hero.id} {...hero} />
           ))}
       </div>
-      <div className="products_menu">
+      <div className="products_menu paginationresp">
         <span>
           <Pagination
             page={counter}

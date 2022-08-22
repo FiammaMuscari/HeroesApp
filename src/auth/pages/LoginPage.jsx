@@ -54,6 +54,7 @@ export const LoginPage = () => {
               name="username"
               value={username}
               onChange={onInputChange}
+              autoComplete="off"
             ></input>
             <button disabled={!username} className="btn btn-outline-primary mt-3" type="submit">
               Login

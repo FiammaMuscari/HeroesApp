@@ -12,7 +12,6 @@ export const HeroCard = ({ id, name, biography, images }) => {
           <div className="col-6 imgrespcontainer">
             <div className="card-body">
               <p className="card-title text-secondary">{name}</p>
-              <p className="card-text text-secondary">{biography.fullName}</p>
               <p className="card-text">
                 <small className="text-muted">
                   {biography.firstAppearance}

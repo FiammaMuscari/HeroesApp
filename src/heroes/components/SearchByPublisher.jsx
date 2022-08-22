@@ -3,9 +3,8 @@ import { useHeroes } from '../../hooks/useHeroes'
 import { NavLink} from 'react-router-dom';
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button } from '@chakra-ui/react';
 
-export const SearchByPublisher = memo(() => {
+export const SearchByPublisher = memo(({setReset}) => {
     const {getPublishers} = useHeroes()
-
     const publishers = getPublishers()
 
   return (
@@ -25,7 +24,7 @@ export const SearchByPublisher = memo(() => {
     <AccordionPanel>
     {
         publishers?.map( publisher => (
-            <Button className='m-1' key={publisher}> 
+            <Button className='m-1' key={publisher} onClick={setReset}> 
             <NavLink className="nav-item "  to={`/${publisher}`}
                     >
                         {publisher}
